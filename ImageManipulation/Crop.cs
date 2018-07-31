@@ -19,18 +19,15 @@ namespace ImageManipulation
         {
             log.Info("C# HTTP trigger function processed a request.");
 
-            string name = req.Query["name"];
-
-            var x = 0;
-            var y = 0;
-            var width = 50;
-            var height = 50;
-
+            var x = 100;
+            var y = 100;
+            var width = 400;
+            var height = 400;
 
             Image sourceImage = null;
             Image destinationImage = null;
 
-            // get byte array from body
+            // resize image
             byte[] bytes;
             using (var streamReader = new MemoryStream())
             {
@@ -53,12 +50,15 @@ namespace ImageManipulation
                 }
             }
 
+            // write to output byte array
             byte[] outputBytes = null;
             using (var ms = new MemoryStream())
             {
                 destinationImage.Save(ms, destinationImage.RawFormat);
                 outputBytes = ms.ToArray();
             }
+
+            // good tool for testing/visulaising the output byte array https://codebeautify.org/base64-to-image-converter
 
 
             return (ActionResult)new OkObjectResult(outputBytes);
