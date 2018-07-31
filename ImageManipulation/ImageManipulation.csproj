@@ -4,8 +4,9 @@
     <AzureFunctionsVersion>v2</AzureFunctionsVersion>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.14" />
-    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0004" />
+    <PackageReference Include="ImageSharp" Version="1.0.0-*" />  
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
