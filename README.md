@@ -6,7 +6,9 @@ Takes an image (binary file) which has been POST'd to the function, crops it and
 
 This function uses the [CoreCompat.System.Drawing](https://github.com/CoreCompat/CoreCompat) Nuget package which ports the old .net 4.6 `System.Drawing` namespace to .net core. This does however require that the Function runs as a Windows function in Azure, Linux functions will not be able to use this library.
 
-There are various options for image manipulation in .net core, this article details some of them: https://blogs.msdn.microsoft.com/dotnet/2017/01/19/net-core-image-processing/. In developing this sample I spent a decent amount of time exploring [ImageSharp](https://sixlabors.github.io/docs/articles/ImageSharp/GettingStarted.html) primarily via [Andrew Lock's Using ImageSharp series of articles](https://andrewlock.net/using-imagesharp-to-resize-images-in-asp-net-core-a-comparison-with-corecompat-system-drawing/) but at the time of writing (July 2018) I could not get it to work with a v2 C# Function, however ImageSharp does look like a potentially good, cross-platform library when it gets to a stable public release.
+There are various options for image manipulation in .net core, this article details some of them: https://blogs.msdn.microsoft.com/dotnet/2017/01/19/net-core-image-processing/. 
+
+In developing this sample I spent a decent amount of time exploring [ImageSharp](https://sixlabors.github.io/docs/articles/ImageSharp/GettingStarted.html) primarily via [Andrew Lock's 'Using ImageSharp ...' series of articles](https://andrewlock.net/using-imagesharp-to-resize-images-in-asp-net-core-a-comparison-with-corecompat-system-drawing/) but at the time of writing (July 2018) I could not get it to work with a v2 C# Function. However, ImageSharp does look like a potentially good, cross-platform library when it gets to a stable public release.
 
 Use https://codebeautify.org/base64-to-image-converter to test the Base64 string to see what it actually looks like.
 
